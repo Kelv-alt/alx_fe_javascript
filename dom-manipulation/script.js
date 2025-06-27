@@ -1,3 +1,8 @@
+// Event bindings using addEventListener
+document.getElementById("addQuoteBtn").addEventListener("click", addQuote);
+document.getElementById("newQuote").addEventListener("click", showRandomQuote);
+document.getElementById("categorySelect").addEventListener("change", showRandomQuote);
+document.getElementById("importFile").addEventListener("change", importFromJsonFile);
 
 // Load quotes from localStorage or use default
 function loadQuotes() {
@@ -93,7 +98,7 @@ function importFromJsonFile(event) {
   };
   fileReader.readAsText(event.target.files[0]);
 }
-function init() {
-  
-  loadLastQuote(); // optional
-}
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+});
+
